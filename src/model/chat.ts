@@ -1,13 +1,13 @@
 import {InterfaceMessage, Message} from "./message";
 import {User} from "./model";
-import {MapDeque} from "./deque/MapDeque";
+import {Deque} from "./deque/Deque";
 import {TypingMembers} from "./typing-members";
 
 export class Chat {
   readonly id: string
   readonly name: string
   readonly description: string | null
-  readonly messages: MapDeque<Message>
+  readonly messages: Deque<Message>
   readonly users: User[]
   readonly creator: User
   readonly createdAt: string
@@ -19,7 +19,7 @@ export class Chat {
     this.id = id;
     this.name = name;
     this.description = description;
-    this.messages = new MapDeque<Message>(messages);
+    this.messages = Deque.fromData(messages);
     this.users = users;
     this.creator = creator;
     this.createdAt = createdAt;

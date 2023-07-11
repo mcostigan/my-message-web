@@ -1,12 +1,16 @@
 import {Chat} from "./chat";
-import {MapDeque} from "./deque/MapDeque";
+import {MapDeque} from "./deque/Deque";
 
 export class MyChats implements Iterable<Chat> {
   private readonly chats: MapDeque<Chat>
 
   constructor(chats: Chat[]) {
-    this.chats = new MapDeque<Chat>(chats)
-    chats.forEach((ch)=>{ch.newMessageCallback = this.updateOrder.bind(this)})
+    this.chats = new MapDeque<Chat>()
+
+    chats.forEach((ch)=>{
+      this.chats.addToEnd(ch)
+      ch.newMessageCallback = this.updateOrder.bind(this)
+    })
   }
 
   newChat(chat: Chat) {
