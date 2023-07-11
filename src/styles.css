@@ -1,4 +1,4 @@
-html, body {
+html {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -6,6 +6,10 @@ html, body {
   right: 0;
   height: 100%;
   width: 100%;
-  background: #f2f2f5;
+  box-sizing: border-box;
+}
 
+body {
+  width: calc(100% - 16px);
+  height: calc(100% - 16px);
 }

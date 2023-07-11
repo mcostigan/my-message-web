@@ -5,17 +5,21 @@ import {Chat} from "../../../model/chat";
   selector: 'app-chat-header',
   template: `
     <div class="header">
-      <div style="font-weight: bolder">{{chat.name}}</div>
+      <div id="chat-header-name">{{chat.name}}</div>
       <div>{{chat.description}}</div>
     </div>
   `,
   styles: [
     `
+      #chat-header-name {
+        font-weight: bolder;
+      }
+
       .header {
         border: 1px solid black;
+        padding: 5px;
         border-radius: 10px;
-        height: 100%;
-        width: border-box;
+        box-sizing: border-box;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly

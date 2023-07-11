@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {MyChats} from "../../../model/MyChats";
+import {MyChats} from "../../../model/my-chats";
 import {Chat} from "../../../model/chat";
 
 @Component({
