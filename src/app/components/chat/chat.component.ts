@@ -27,7 +27,7 @@ import {Chat} from "../../../model/chat";
         padding: 10px;
 
         display: grid;
-        grid-template-rows: 50px calc(100% - 70px);
+        grid-template-rows: 50px calc(100% - 50px);
         grid-template-areas: "header" "panel";
       }
 
@@ -72,10 +72,6 @@ export class ChatComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  }
-
-  get isLoaded(): boolean {
-    return this.chat != undefined
   }
 
 
