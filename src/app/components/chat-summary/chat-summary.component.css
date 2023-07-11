@@ -1,0 +1,6 @@
+.chat-summary {
+  border: 1px solid black;
+  border-radius: 10px;
+  height: 75px;
+  padding: 3px;
+}

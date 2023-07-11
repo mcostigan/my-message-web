@@ -1,0 +1,14 @@
+.home-page {
+  display: grid;
+  grid-template-columns: 200px calc(100% - 200px);
+  grid-template-rows: 100%;
+  height: 100%;
+  width: 100%;
+}
+
+#my-chats {
+  border-right: 1px solid gray;
+  padding-right: 2px;
+  height: calc(100% - 3px);
+  width: border-box;
+}

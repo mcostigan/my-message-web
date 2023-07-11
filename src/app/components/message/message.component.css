@@ -1,0 +1,61 @@
+.message {
+  width: 400px;
+  margin: 2px;
+
+  display: grid;
+  grid-template-rows: 20px min-content 20px;
+  grid-template-columns: 30px 370px;
+  grid-template-areas: ". message-from"
+                        "message-image message-text"
+                        ". message-time";
+}
+
+.my-message {
+  float: right;
+  grid-template-columns: 370px 30px;
+  grid-template-areas: ". ."
+                        "message-text message-image"
+                        "message-time .";
+}
+
+.my-message .message-text {
+  background-color: cornflowerblue;
+}
+
+.message-from {
+  font-weight: bold;
+  font-size: small;
+
+  grid-area: message-from;
+}
+
+.message-image {
+  margin: 1px;
+  grid-area: message-image;
+}
+
+.message-text {
+  border: 1px solid gray;
+  border-radius: 10px;
+  min-height: 30px;
+  padding: 2px;
+
+  grid-area: message-text;
+}
+
+.message-time {
+  font-size: smaller;
+  color: gray;
+
+
+  grid-area: message-time;
+}
+
+.my-message .message-time {
+  float: right;
+}
+
+.pending-message {
+  color: lightgray;
+  background-color: darkgray ;
+}
