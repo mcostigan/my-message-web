@@ -10,6 +10,7 @@ import {Chat} from "../../../model/chat";
 export class MyChatsComponent implements OnInit {
   @Input() myChats!: MyChats
   @Output() chatSelectionEmitter = new EventEmitter<Chat>()
+  selectedChat: Chat | null = null
 
   constructor() {
   }
@@ -18,6 +19,7 @@ export class MyChatsComponent implements OnInit {
   }
 
   selectChat(chat: Chat) {
+    this.selectedChat = chat
     this.chatSelectionEmitter.emit(chat)
   }
 

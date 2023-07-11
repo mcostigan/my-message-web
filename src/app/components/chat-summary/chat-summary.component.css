@@ -3,3 +3,8 @@
   height: 75px;
   padding: 3px;
 }
+
+.selected-chat {
+  border-radius: 10px;
+  background-color: cornflowerblue;
+}

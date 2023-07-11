@@ -2,7 +2,7 @@
   <h2>Chats</h2>
   <div *ngIf="myChats" style="display: flex; flex-direction: column; row-gap: 5px">
     <div *ngFor="let chat of myChats" >
-      <app-chat-summary [chat]="chat" (click)="selectChat(chat)"></app-chat-summary>
+      <app-chat-summary [chat]="chat" [isSelected]="selectedChat==chat" (click)="selectChat(chat)"></app-chat-summary>
     </div>
   </div>
 </div>
