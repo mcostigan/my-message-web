@@ -10,8 +10,12 @@ export class MapDeque<T extends { id: string }> implements Iterable<T> {
   }
 
 
-  get tail(): DequeNode<T> | null {
-    return this._tail;
+  get tail(): T | null {
+    return this._tail?.data ?? null;
+  }
+
+  get head(): T | null {
+    return this._head?.data ?? null;
   }
 
   addToFront(data: T) {
