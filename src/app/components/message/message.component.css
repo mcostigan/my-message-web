@@ -8,6 +8,7 @@
   grid-template-areas: ". message-from"
                         "message-image message-text"
                         ". message-time";
+  column-gap: 5px;
 }
 
 .my-message {
@@ -39,23 +40,34 @@
   border-radius: 10px;
   min-height: 30px;
   padding: 2px;
-
+  box-sizing: border-box;
+  width: 100%;
   grid-area: message-text;
 }
 
 .message-time {
   font-size: smaller;
   color: gray;
-
-
   grid-area: message-time;
 }
 
 .my-message .message-time {
-  float: right;
+  text-align: right;
 }
 
 .pending-message {
   color: lightgray;
-  background-color: darkgray ;
+  background-color: darkgray;
+}
+
+.message-image {
+  width: 30px;
+  height: 30px
+}
+
+.message-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  object-fit: contain
 }
