@@ -29,6 +29,7 @@ export class Chat {
 
 
   addNewMessage(message: Message) {
+
     this.messages.addToEnd(message)
     this.newMessageCallback(this.id)
   }
@@ -42,7 +43,11 @@ export class Chat {
     if (this.typingMembers.hasData()) {
       return this.typingMembers.typingText()
     }
-    return this.messages.tail?.data.text ?? ''
+    return this.messages.tail?.text ?? ''
+  }
+
+  get isGroupChat(): boolean {
+    return this.users.length > 2
   }
 }
 

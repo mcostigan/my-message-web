@@ -9,7 +9,7 @@ import {Chat} from "../../../model/chat";
       <div class="chat-panel">
         <div class="messages">
           <div *ngFor="let message of chat?.messages" style="padding: 5px; width: calc(100% - 10px)">
-            <app-message [message]="message" [showName]="false" style="max-width: 60%"></app-message>
+            <app-message [message]="message" [showName]="chat.isGroupChat"></app-message>
           </div>
         </div>
         <app-typing [typingMembers]="chat.typingMembers" class="typing"></app-typing>
