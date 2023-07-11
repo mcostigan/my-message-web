@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {ChatFactory} from "./chat.factory";
 import {Chat, IChat} from "../../../model/chat";
-import {MyChats} from "../../../model/MyChats";
+import {MyChats} from "../../../model/my-chats";
 import {Observable} from "rxjs";
 
 @Injectable({

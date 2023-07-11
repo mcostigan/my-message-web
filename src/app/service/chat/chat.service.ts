@@ -6,7 +6,7 @@ import {HttpWrapperService} from "../http-wrapper.service";
 import {Chat, IChat} from "../../../model/chat";
 import {ChatFactory} from "./chat.factory";
 import {MyChatsFactory} from "./my-chats.factory";
-import {MyChats} from "../../../model/MyChats";
+import {MyChats} from "../../../model/my-chats";
 import {IMessage} from "@stomp/stompjs";
 
 @Injectable({
