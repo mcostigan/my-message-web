@@ -8,13 +8,10 @@ export class TypingMembers {
   private users = new Map<string, User>()
   private timeouts = new Map<string, Timeout>()
 
-  constructor(private authenticatedUser: AuthenticatedUser) {
+  constructor() {
   }
 
   processEvent(t: TypingEvent) {
-    if (t.user.id === this.authenticatedUser.get()?.id) {
-      return
-    }
     switch (t.type) {
       case "IsTypingEvent":
         let isTypingEvent = t as IsTypingEvent
