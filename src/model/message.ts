@@ -1,17 +1,11 @@
 import {User} from "./model";
 
-interface IMessage {
+export interface SimpleMessage {
   id: string
   text: string
   timeStamp: string
-}
-
-export interface InterfaceMessage extends IMessage{
-  user: User
-}
-
-export interface SimpleMessage extends IMessage{
   authorId: string
+  readBy: string[]
 }
 
 export class Message {

@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {InterfaceMessage, Message, SimpleMessage} from "../../../model/message";
+import {Message, SimpleMessage} from "../../../model/message";
 import {AuthenticatedUser} from "../authenticated-user.service";
 import {User} from "../../../model/model";
 
@@ -12,11 +12,7 @@ export class MessageFactoryService {
   }
 
   // TODO subscribe to receipts
-  get(iMessage: InterfaceMessage, isSent: boolean, isRead: boolean): Message {
-    return new Message(iMessage.id, iMessage.text, iMessage.user, iMessage.timeStamp, isSent, isRead ,this.authenticatedUser.get()?.id === iMessage.user.id)
-  }
-
-  getFromSimpleMessage(iMessage: SimpleMessage, isSent: boolean, isRead: boolean, user: User): Message{
-    return new Message(iMessage.id, iMessage.text, user, iMessage.timeStamp, isSent, isRead ,this.authenticatedUser.get()?.id === iMessage.authorId)
+  getFromSimpleMessage(iMessage: SimpleMessage, isSent: boolean, user: User): Message{
+    return new Message(iMessage.id, iMessage.text, user, iMessage.timeStamp, isSent, iMessage.readBy.includes(this.authenticatedUser.get()?.id ?? '') ,this.authenticatedUser.get()?.id === iMessage.authorId)
   }
 }
