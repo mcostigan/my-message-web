@@ -7,16 +7,16 @@
 }
 
 .my-message .message-text {
-  background-color: cornflowerblue;
+  background-color: #1982FC;
   text-align: right;
 }
 
 .message-text {
   border: 1px solid gray;
   background-color: gray;
-  border-radius: 10px;
+  border-radius: 30px;
   min-height: 30px;
-  padding: 2px;
+  padding: 5px;
   box-sizing: border-box;
   width:200px;
   grid-area: message-text;
