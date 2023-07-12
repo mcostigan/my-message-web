@@ -16,7 +16,7 @@ import {Chat} from "../../../model/chat";
       }
 
       .header {
-        border: 1px solid black;
+        border: 1px solid gray;
         padding: 5px;
         border-radius: 10px;
         box-sizing: border-box;
