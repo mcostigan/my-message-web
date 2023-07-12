@@ -1,10 +1,15 @@
 export class Deque<T> implements Iterable<T> {
   protected _head: DequeNode<T> | null = null
   protected _tail: DequeNode<T> | null = null
+  private _size: number = 0
 
   constructor() {
   }
 
+
+  get size(): number {
+    return this._size;
+  }
 
   get tail(): T | null {
     return this._tail?.data ?? null;
@@ -17,11 +22,13 @@ export class Deque<T> implements Iterable<T> {
   addToFront(data: T) {
     const node = new DequeNode(data, null, this._head)
     this.addNodeToFront(node)
+    this._size += 1
   }
 
   addToEnd(data: T) {
     const node = new DequeNode(data, this._tail, null)
     this.addNodeToBack(node)
+    this._size += 1
   }
 
   protected addNodeToFront(node: DequeNode<T>) {
