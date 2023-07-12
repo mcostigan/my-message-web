@@ -1,9 +1,10 @@
 import {Injectable} from '@angular/core';
 import {Chat, IChat} from "../../../model/chat";
-import {InterfaceMessage, Message} from "../../../model/message";
+import {Message, SimpleMessage} from "../../../model/message";
 import {MessageService} from "../message/message.service";
 import {MessageFactoryService} from "../message/message-factory.service";
 import {TypingFactory} from "../typing/typing.factory";
+import {User} from "../../../model/model";
 
 @Injectable({
   providedIn: 'root'
@@ -15,10 +16,12 @@ export class ChatFactory {
 
   get(iChat: IChat): Chat {
     const tm = this.typingFactory.get(iChat.id)
-    const chat = new Chat(iChat.id, iChat.name, iChat.description, iChat.messages.map((m: InterfaceMessage) => this.messageFactory.get(m, true, true)), iChat.users, iChat.creator, iChat.createdAt, tm)
+    const users: Map<string, User> = new Map<string, User>(iChat.users.map((u: User)=>[u.id, u]))
+    const chat = new Chat(iChat.id, iChat.name, iChat.description, iChat.messages.map((m: SimpleMessage) => this.messageFactory.getFromSimpleMessage(m, true, true, users.get(m.authorId)!!)), iChat.users, iChat.creator, iChat.createdAt, tm)
     this.messageService.subscribeToChatMessages(chat.id).subscribe(
-      (m: Message) => {
-        chat.addNewMessage(m)
+      (m: SimpleMessage) => {
+        let message = this.messageFactory.getFromSimpleMessage(m, true, false, users.get(m.authorId)!! )
+        chat.addNewMessage(message)
       }
     )
     return chat

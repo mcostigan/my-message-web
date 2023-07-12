@@ -1,4 +1,4 @@
-import {InterfaceMessage, Message} from "./message";
+import {Message, SimpleMessage} from "./message";
 import {User} from "./model";
 import {TypingMembers} from "./typing-members";
 import {MessageGroups} from "./message-groups";
@@ -60,7 +60,7 @@ export interface IChat {
   id: string
   name: string
   description: string | null
-  messages: InterfaceMessage[]
+  messages: SimpleMessage[]
   users: User[]
   creator: User
   createdAt: string

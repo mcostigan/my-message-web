@@ -22,7 +22,7 @@ export class ChatService {
   }
 
   myChats(): Observable<MyChats> {
-    return this.httpWrapper.get<IChat[]>('chat/me', true).pipe(map((chats: IChat[]) => this.myChatsFactoryService.get(chats, this.subscribeToNewChats())))
+    return this.httpWrapper.get<IChat[]>('chat', true).pipe(map((chats: IChat[]) => this.myChatsFactoryService.get(chats, this.subscribeToNewChats())))
   }
 
   createChat(name: string | null, description: string | null, users: string[]) {
