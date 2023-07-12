@@ -5,13 +5,36 @@ import {MessageService} from "../../service/message/message.service";
 @Component({
   selector: 'app-chat-box',
   template: `
-    <div style="box-sizing: border-box; display: flex; flex-direction: row;">
-      <input (keyup)="change()" [(ngModel)]="text" style="border-radius: 5px; width: 80%">
-      <button (click)="send()" style="width: 100px; height: 31px">Send</button>
+    <div class="new-chat-message">
+      <input (keyup)="change()" [(ngModel)]="text">
+      <button (click)="send()">Send</button>
     </div>
 
   `,
-  styles: []
+  styles: [
+    `
+      .new-chat-message {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        column-gap: 5px
+      }
+
+      input {
+        border-radius: 30px;
+        background-color: transparent;
+        width: 80%;
+        border: 2px solid gray;
+        color: white;
+      }
+
+      button {
+        width: 100px;
+        height: 30px;
+        border-radius: 30px
+      }
+    `
+  ]
 })
 export class ChatBoxComponent implements OnInit {
   text: string = ''
