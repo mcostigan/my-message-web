@@ -10,7 +10,7 @@ import {MessageFactoryService} from "./message-factory.service";
 })
 export class MessageService {
 
-  constructor(private webSocketService: WebSocketService, private messageFactory: MessageFactoryService) {
+  constructor(private webSocketService: WebSocketService) {
   }
 
 
@@ -21,6 +21,10 @@ export class MessageService {
 
   sendChatMessage(chatId: string, text: string) {
     this.webSocketService.publish(`/app/chat/${chatId}/message`, text)
+  }
+
+  readMessage(messageId: string) {
+    this.webSocketService.publish(`/app/message/${messageId}/read`)
   }
 
   subscribeToSentReceipt(sendId: string): Observable<IMessage> {

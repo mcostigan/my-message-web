@@ -1,4 +1,5 @@
 import {User} from "./model";
+import {MessageService} from "../app/service/message/message.service";
 
 export interface SimpleMessage {
   id: string
@@ -17,14 +18,13 @@ export class Message {
   private state: MessageState
   private readState: ReadState
 
-
-  constructor(id: string, text: string, user: User, timeStamp: string, isSent: boolean, isRead: boolean, isMyMessage: boolean) {
+  constructor(id: string, text: string, user: User, timeStamp: string, isSent: boolean, isRead: boolean, isMyMessage: boolean, messageService: MessageService) {
     this.id = id;
     this.text = text;
     this.user = user;
     this.timeStamp = new Date(timeStamp);
     this.state = MessageState.getState(isSent, this)
-    this.readState = ReadState.get(this, isRead, (id: string)=>{})
+    this.readState = ReadState.get(this, isRead, messageService)
     this.isMyMessage = isMyMessage
   }
 
@@ -103,33 +103,30 @@ class SentState extends MessageState {
 }
 
 abstract class ReadState {
-  protected constructor(protected message: Message) {
+  protected constructor(protected message: Message, protected messageService: MessageService) {
   }
 
   abstract read(): void
 
   abstract isRead(): boolean
 
-  static get(message: Message, isRead: boolean, onRead: (id: string) => void): ReadState {
+  static get(message: Message, isRead: boolean, messageService: MessageService): ReadState {
     if (isRead) {
-      return new IsReadState(message)
+      return new IsReadState(message, messageService)
     }
-    return new IsUnreadState(message, onRead)
+    return new IsUnreadState(message, messageService)
   }
 }
 
 class IsUnreadState extends ReadState {
-  constructor(message: Message, private onRead: (id: string) => void) {
-    super(message);
-  }
 
   isRead(): boolean {
     return false;
   }
 
   read(): void {
-    this.onRead(this.message.id)
-    this.message.setReadState(new IsReadState(this.message))
+    this.messageService.readMessage(this.message.id)
+    this.message.setReadState(new IsReadState(this.message, this.messageService))
   }
 
 }
