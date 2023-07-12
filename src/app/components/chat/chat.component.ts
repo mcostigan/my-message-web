@@ -42,7 +42,7 @@ import {Chat} from "../../../model/chat";
         box-sizing: border-box;
         grid-area: panel;
 
-        grid-template-rows: calc(100% - 60px) 15px 45px;
+        grid-template-rows: calc(100% - 60px) 25px 35px;
         grid-template-areas: "messages" "typing" "input";
       }
 

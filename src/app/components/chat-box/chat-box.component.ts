@@ -6,8 +6,7 @@ import {MessageService} from "../../service/message/message.service";
   selector: 'app-chat-box',
   template: `
     <div class="new-chat-message">
-      <input (keyup)="change()" [(ngModel)]="text">
-      <button (click)="send()">Send</button>
+      <input (keyup)="change()" (keyup.enter)="send()" [(ngModel)]="text" placeholder="Message">
     </div>
 
   `,
@@ -17,21 +16,20 @@ import {MessageService} from "../../service/message/message.service";
         box-sizing: border-box;
         display: flex;
         flex-direction: row;
-        column-gap: 5px
+        column-gap: 5px;
+        height: 100%;
+        justify-content: center;
       }
 
       input {
         border-radius: 30px;
         background-color: transparent;
-        width: 80%;
+        width: 90%;
         border: 2px solid gray;
         color: white;
-      }
-
-      button {
-        width: 100px;
-        height: 30px;
-        border-radius: 30px
+        height: border-box;
+        padding-left: 25px;
+        padding-right: 10px;
       }
     `
   ]
