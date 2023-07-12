@@ -1,5 +1,8 @@
 <div class="temporal-group">
-  <div class="message-time">{{group.rootDate}}</div>
+  <div class="message-timestamp">
+    <div class="message-date">{{getRootDate()}}</div>
+    <div class="message-time">{{getRootTime()}}</div>
+  </div>
   <div class="author-groups">
     <app-author-group [group]="authorGroup" [showName]="showName" *ngFor="let authorGroup of group.authorGroups"></app-author-group>
   </div>

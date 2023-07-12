@@ -26,7 +26,8 @@ export class MessageGroups implements Iterable<TemporalGroup> {
      * else, create a new temporal group
      */
     let lastGroup = this.temporalGroups.tail!!
-    if (+lastGroup.lastMessageDate - +m.timeStamp > 300000) {
+    console.log(lastGroup.lastMessage?.timeStamp, m.timeStamp, lastGroup.lastMessageDate.getTime() - m.timeStamp.getTime())
+    if (m.timeStamp.getTime() - lastGroup.lastMessageDate.getTime() > 300000) {
       this.temporalGroups.addToEnd(new TemporalGroup(m))
     } else {
       lastGroup.addToBack(m)

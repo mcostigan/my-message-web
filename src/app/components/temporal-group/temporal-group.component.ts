@@ -17,7 +17,11 @@ export class TemporalGroupComponent implements OnInit {
   }
 
   getRootDate(): string {
-    return this.dateService.getMDYY(this.group.rootDate)
+    return this.dateService.getDate(this.group.rootDate)
+  }
+
+  getRootTime(): string {
+    return this.dateService.getTime(this.group.rootDate)
   }
 
 

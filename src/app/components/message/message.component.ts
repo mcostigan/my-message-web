@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Message} from "../../../model/message";
-import {formatDate} from "@angular/common";
 import {DateService} from "../../service/date.service";
 
 @Component({
@@ -19,7 +18,7 @@ export class MessageComponent implements OnInit {
   }
 
   get timeStamp(): string {
-    return this.dateService.getMDYY(this.message.timeStamp)
+    return this.dateService.getDate(this.message.timeStamp)
   }
 
   get classes(): string {

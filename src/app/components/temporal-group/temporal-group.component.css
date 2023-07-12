@@ -1,7 +1,11 @@
-.message-time {
+.message-timestamp {
   font-size: smaller;
   color: gray;
   grid-area: message-time;
   text-align: center;
   width: 100%;
+}
+
+.message-date {
+  font-weight: bold;
 }
