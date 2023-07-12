@@ -11,7 +11,7 @@ export class MessageFactoryService {
   }
 
   // TODO subscribe to receipts
-  get(iMessage: InterfaceMessage, isSent: boolean): Message {
-    return new Message(iMessage.id, iMessage.text, iMessage.user, iMessage.timeStamp, isSent, this.authenticatedUser.get()?.id === iMessage.user.id)
+  get(iMessage: InterfaceMessage, isSent: boolean, isRead: boolean): Message {
+    return new Message(iMessage.id, iMessage.text, iMessage.user, iMessage.timeStamp, isSent, isRead ,this.authenticatedUser.get()?.id === iMessage.user.id)
   }
 }

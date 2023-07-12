@@ -1,7 +1,9 @@
 <div [class]="classes">
   <div class="chat-name" style="font-weight: bolder">{{chat.name}}</div>
-  <div class="last-message">
-    <div>{{chat.previewText()}}</div>
+  <div class="summary-content">
+    <div *ngIf="chat.hasUnreadMessage" class="unread-alert"></div>
+    <div class="preview-text">
+      <div>{{chat.previewText()}}</div>
+    </div>
   </div>
-
 </div>

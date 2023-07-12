@@ -1,5 +1,4 @@
 import {User} from "./model";
-import {DateService} from "../app/service/date.service";
 
 export interface InterfaceMessage {
   id: string
@@ -15,14 +14,16 @@ export class Message {
   readonly timeStamp: Date
   readonly isMyMessage: boolean
   private state: MessageState
+  private readState: ReadState
 
 
-  constructor(id: string, text: string, user: User, timeStamp: string, isSent: boolean, isMyMessage: boolean) {
+  constructor(id: string, text: string, user: User, timeStamp: string, isSent: boolean, isRead: boolean, isMyMessage: boolean) {
     this.id = id;
     this.text = text;
     this.user = user;
     this.timeStamp = new Date(timeStamp);
     this.state = MessageState.getState(isSent, this)
+    this.readState = ReadState.get(this, isRead, (id: string)=>{})
     this.isMyMessage = isMyMessage
   }
 
@@ -32,6 +33,18 @@ export class Message {
 
   setState(state: MessageState) {
     this.state = state
+  }
+
+  get isRead(): boolean {
+    return this.readState.isRead()
+  }
+
+  read() {
+    this.readState.read()
+  }
+
+  setReadState(state: ReadState) {
+    this.readState = state
   }
 
 }
@@ -87,3 +100,46 @@ class SentState extends MessageState {
   }
 
 }
+
+abstract class ReadState {
+  protected constructor(protected message: Message) {
+  }
+
+  abstract read(): void
+
+  abstract isRead(): boolean
+
+  static get(message: Message, isRead: boolean, onRead: (id: string) => void): ReadState {
+    if (isRead) {
+      return new IsReadState(message)
+    }
+    return new IsUnreadState(message, onRead)
+  }
+}
+
+class IsUnreadState extends ReadState {
+  constructor(message: Message, private onRead: (id: string) => void) {
+    super(message);
+  }
+
+  isRead(): boolean {
+    return false;
+  }
+
+  read(): void {
+    this.onRead(this.message.id)
+    this.message.setReadState(new IsReadState(this.message))
+  }
+
+}
+
+class IsReadState extends ReadState {
+  isRead(): boolean {
+    return true;
+  }
+
+  read(): void {
+  }
+
+}
+

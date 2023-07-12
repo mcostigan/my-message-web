@@ -16,6 +16,7 @@ export class MessageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.message.read()
     this.lines = this.textJustificationService.justifyText(this.message.text)
   }
 

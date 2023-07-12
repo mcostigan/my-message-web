@@ -17,7 +17,7 @@ export class MessageService {
   subscribeToChatMessages(chatId: string): Observable<Message> {
     return this.webSocketService.subscription(`/topic/chat/${chatId}/message`)
       .pipe(map((it: IMessage) => JSON.parse(it.body) as InterfaceMessage))
-      .pipe(map((m: InterfaceMessage) => this.messageFactory.get(m, true)))
+      .pipe(map((m: InterfaceMessage) => this.messageFactory.get(m, true, false)))
   }
 
   sendChatMessage(chatId: string, text: string) {

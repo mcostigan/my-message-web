@@ -26,7 +26,6 @@ export class MessageGroups implements Iterable<TemporalGroup> {
      * else, create a new temporal group
      */
     let lastGroup = this.temporalGroups.tail!!
-    console.log(lastGroup.lastMessage?.timeStamp, m.timeStamp, lastGroup.lastMessageDate.getTime() - m.timeStamp.getTime())
     if (m.timeStamp.getTime() - lastGroup.lastMessageDate.getTime() > 300000) {
       this.temporalGroups.addToEnd(new TemporalGroup(m))
     } else {
@@ -48,6 +47,10 @@ export class MessageGroups implements Iterable<TemporalGroup> {
 
   get lastMessage(): Message | null {
     return this.temporalGroups.tail?.lastMessage ?? null
+  }
+
+  get hasUnreadMessage(): boolean {
+    return this.temporalGroups.tail?.hasUnreadMessage == true
   }
 }
 
@@ -78,6 +81,10 @@ export class TemporalGroup {
 
   get lastMessage(): Message | null {
     return this.authorGroups.tail?.messages.tail ?? null
+  }
+
+  get hasUnreadMessage(): boolean {
+    return this.authorGroups.tail!!.hasUnreadMessage
   }
 
 }
@@ -111,5 +118,9 @@ export class AuthorGroup {
 
   get lastMessageDate(): Date {
     return this.messages.tail!!.timeStamp
+  }
+
+  get hasUnreadMessage(): boolean {
+    return !this.messages.tail!!.isRead
   }
 }

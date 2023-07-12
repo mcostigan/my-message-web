@@ -2,6 +2,36 @@
   border-bottom: 1px solid gray;
   height: 75px;
   padding: 3px;
+
+  display: grid;
+  grid-template-rows: 25px 50px ;
+  grid-template-areas: "name" "content";
+  column-gap: 5px;
+}
+
+
+.chat-name {
+  grid-area: name;
+}
+
+.summary-content {
+  grid-area: content;
+  display: flex;
+  flex-direction: row;
+  column-gap: 5px;
+  justify-content: left;
+}
+
+.unread-alert {
+  box-sizing: border-box;
+  height: 100%;
+  width: 5px;
+  background-color: #1982FC;
+  border-radius: 5px 5px;
+}
+
+.preview-text {
+  grid-area: preview;
 }
 
 .selected-chat {

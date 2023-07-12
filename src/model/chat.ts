@@ -1,6 +1,5 @@
 import {InterfaceMessage, Message} from "./message";
 import {User} from "./model";
-import {Deque} from "./deque/Deque";
 import {TypingMembers} from "./typing-members";
 import {MessageGroups} from "./message-groups";
 
@@ -49,6 +48,10 @@ export class Chat {
 
   get isGroupChat(): boolean {
     return this.users.length > 2
+  }
+
+  get hasUnreadMessage(){
+    return this.messages.hasUnreadMessage
   }
 }
 

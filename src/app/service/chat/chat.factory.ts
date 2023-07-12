@@ -15,7 +15,7 @@ export class ChatFactory {
 
   get(iChat: IChat): Chat {
     const tm = this.typingFactory.get(iChat.id)
-    const chat = new Chat(iChat.id, iChat.name, iChat.description, iChat.messages.map((m: InterfaceMessage) => this.messageFactory.get(m, true)), iChat.users, iChat.creator, iChat.createdAt, tm)
+    const chat = new Chat(iChat.id, iChat.name, iChat.description, iChat.messages.map((m: InterfaceMessage) => this.messageFactory.get(m, true, true)), iChat.users, iChat.creator, iChat.createdAt, tm)
     this.messageService.subscribeToChatMessages(chat.id).subscribe(
       (m: Message) => {
         chat.addNewMessage(m)
