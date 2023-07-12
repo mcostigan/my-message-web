@@ -12,7 +12,6 @@
 }
 
 .message-text {
-  border: 1px solid gray;
   background-color: gray;
   border-radius: 30px;
   min-height: 30px;
