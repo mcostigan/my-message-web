@@ -11,16 +11,11 @@ import {DateService} from "../../service/date.service";
 export class MessageComponent implements OnInit {
 
   @Input() message!: Message
-  @Input() showName!: boolean
 
   constructor(private dateService: DateService) {
   }
 
   ngOnInit(): void {
-  }
-
-  get myMessage(): boolean {
-    return this.message.isMyMessage
   }
 
   get timeStamp(): string {

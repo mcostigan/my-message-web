@@ -1,0 +1,7 @@
+.message-time {
+  font-size: smaller;
+  color: gray;
+  grid-area: message-time;
+  text-align: center;
+  width: 100%;
+}

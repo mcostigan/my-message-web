@@ -7,9 +7,9 @@ import {Chat} from "../../../model/chat";
     <div class="chat">
       <app-chat-header [chat]="chat" class="chat-header"></app-chat-header>
       <div class="chat-panel">
-        <div class="messages">
-          <div *ngFor="let message of chat?.messages" style="padding: 5px; width: calc(100% - 10px)">
-            <app-message [message]="message" [showName]="chat.isGroupChat"></app-message>
+        <div class="groups">
+          <div *ngFor="let group of chat?.messages" style="padding: 5px; width: calc(100% - 10px)">
+            <app-temporal-group [group]="group" [showName]="true"></app-temporal-group>
           </div>
         </div>
         <app-typing [typingMembers]="chat.typingMembers" class="typing"></app-typing>
@@ -46,7 +46,7 @@ import {Chat} from "../../../model/chat";
         grid-template-areas: "messages" "typing" "input";
       }
 
-      .messages {
+      .groups {
         grid-area: messages;
         overflow-y: auto;
         height: 100%;

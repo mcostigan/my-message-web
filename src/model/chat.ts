@@ -2,12 +2,13 @@ import {InterfaceMessage, Message} from "./message";
 import {User} from "./model";
 import {Deque} from "./deque/Deque";
 import {TypingMembers} from "./typing-members";
+import {MessageGroups} from "./message-groups";
 
 export class Chat {
   readonly id: string
   readonly name: string
   readonly description: string | null
-  readonly messages: Deque<Message>
+  readonly messages: MessageGroups
   readonly users: User[]
   readonly creator: User
   readonly createdAt: string
@@ -19,7 +20,7 @@ export class Chat {
     this.id = id;
     this.name = name;
     this.description = description;
-    this.messages = Deque.fromData(messages);
+    this.messages = MessageGroups.fromMessages(messages);
     this.users = users;
     this.creator = creator;
     this.createdAt = createdAt;
@@ -30,12 +31,12 @@ export class Chat {
 
   addNewMessage(message: Message) {
 
-    this.messages.addToEnd(message)
+    this.messages.addNewMessage(message)
     this.newMessageCallback(this.id)
   }
 
   addOldMessages(messages: Message[]) {
-    messages.reverse().forEach((m: Message) => this.messages.addToFront(m))
+    messages.reverse().forEach((m: Message) => this.messages.addOldMessage(m))
   }
 
 
@@ -43,7 +44,7 @@ export class Chat {
     if (this.typingMembers.hasData()) {
       return this.typingMembers.typingText()
     }
-    return this.messages.tail?.text ?? ''
+    return this.messages.lastMessage?.text ?? ''
   }
 
   get isGroupChat(): boolean {

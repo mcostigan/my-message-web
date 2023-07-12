@@ -1,0 +1,12 @@
+<div [class]="classes">
+  <div class="message-from" *ngIf="showName && !group.isMe">{{group.author.name}}</div>
+
+  <div class="message-image">
+    <img [src]="group.author.image" alt="">
+  </div>
+
+  <div class="messages">
+    <app-message [message]="message" *ngFor="let message of group.messages"></app-message>
+  </div>
+
+</div>

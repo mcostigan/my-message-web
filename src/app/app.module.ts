@@ -15,6 +15,8 @@ import {MessageComponent} from './components/message/message.component';
 import {TypingComponent} from './components/typing/typing.component';
 import {NewChatComponent} from './components/new-chat/new-chat.component';
 import {ChatHeaderComponent} from './components/chat-header/chat-header.component';
+import {TemporalGroupComponent} from './components/temporal-group/temporal-group.component';
+import {AuthorGroupComponent} from "./components/author-group/author-group.component";
 
 
 const routes: Routes = [
@@ -36,7 +38,9 @@ const routes: Routes = [
     MessageComponent,
     TypingComponent,
     NewChatComponent,
-    ChatHeaderComponent
+    ChatHeaderComponent,
+    TemporalGroupComponent,
+    AuthorGroupComponent
   ],
   imports: [
     BrowserModule,

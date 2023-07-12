@@ -1,12 +1,3 @@
 <div class="message" [className]="classes">
-
-  <div class="message-from" *ngIf="!myMessage && showName">{{message.user.name}}</div>
-
-  <div class="message-image">
-    <img [src]="message.user.image" alt="">
-  </div>
-
   <div class="message-text">{{message.text}}</div>
-
-  <div class="message-time">{{timeStamp}}</div>
 </div>
