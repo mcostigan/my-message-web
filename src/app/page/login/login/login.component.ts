@@ -4,13 +4,23 @@ import {LoginService} from "../../../service/login.service";
 @Component({
   selector: 'app-login',
   template: `
-    <input [(ngModel)]="username">
-    <button (click)="login()">Login</button>
+    <div>
+      <input [(ngModel)]="username">
+    </div>
+    <div>
+      <input [(ngModel)]="password">
+    </div>
+    <div>
+      <button (click)="login()">Login</button>
+    </div>
+
+
   `,
   styles: []
 })
 export class LoginComponent implements OnInit {
   username: string = ''
+  password: string = ''
 
   constructor(private loginService: LoginService) {
   }
@@ -20,7 +30,7 @@ export class LoginComponent implements OnInit {
 
 
   login() {
-    this.loginService.login(this.username, 'password', '')
+    this.loginService.login(this.username, this.password, '')
   }
 
 }
