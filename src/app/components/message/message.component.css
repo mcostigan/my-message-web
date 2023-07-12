@@ -14,11 +14,17 @@
 .message-text {
   background-color: gray;
   border-radius: 30px;
-  min-height: 30px;
-  padding: 5px;
+  height: min-content;
+  padding: 8px;
   box-sizing: border-box;
-  width:200px;
+  width:max-content;
   grid-area: message-text;
+}
+
+.message-line {
+  height: 25px;
+  min-width: 30px;
+  width: max-content;
 }
 
 .pending-message {

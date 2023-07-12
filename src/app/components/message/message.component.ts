@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Message} from "../../../model/message";
 import {DateService} from "../../service/date.service";
+import {TextJustificationService} from "../../service/text-justification.service";
 
 @Component({
   selector: 'app-message',
@@ -10,15 +11,12 @@ import {DateService} from "../../service/date.service";
 export class MessageComponent implements OnInit {
 
   @Input() message!: Message
-
-  constructor(private dateService: DateService) {
+  lines: string[] = []
+  constructor(private textJustificationService: TextJustificationService) {
   }
 
   ngOnInit(): void {
-  }
-
-  get timeStamp(): string {
-    return this.dateService.getDate(this.message.timeStamp)
+    this.lines = this.textJustificationService.justifyText(this.message.text)
   }
 
   get classes(): string {

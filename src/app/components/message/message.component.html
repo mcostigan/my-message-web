@@ -1,3 +1,7 @@
 <div class="message" [className]="classes">
-  <div class="message-text">{{message.text}}</div>
+  <div class="message-text">
+    <div class="message-line" *ngFor="let line of lines">
+      {{line}}
+    </div>
+  </div>
 </div>
