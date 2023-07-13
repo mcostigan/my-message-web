@@ -53,6 +53,10 @@ export class Message {
     this.readState = state
   }
 
+  reactTo(reaction: Reaction){
+    this.reactions.push(reaction)
+  }
+
 }
 
 abstract class MessageState {
