@@ -1,7 +1,7 @@
-<div style="height: 100%">
-  <div class="home-page" *ngIf="myChats">
+<div class="home-page">
+  <div class="home-content" *ngIf="myChats">
     <app-my-chats id="my-chats" [myChats]="myChats" (chatSelectionEmitter)="selectChat($event)"></app-my-chats>
-    <app-chat [chat]="selectedChat" *ngIf="selectedChat" style="height: 100%; width: 100%"></app-chat>
+    <app-chat class="chat-window" [chat]="selectedChat" *ngIf="selectedChat"></app-chat>
   </div>
 </div>
 

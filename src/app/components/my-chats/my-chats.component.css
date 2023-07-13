@@ -1,0 +1,9 @@
+.my-chats {
+  height: 100%;
+}
+
+.my-chats-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px
+}

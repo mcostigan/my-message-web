@@ -12,6 +12,7 @@
 
 .chat-name {
   grid-area: name;
+  font-weight: bolder;
 }
 
 .summary-content {

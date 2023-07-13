@@ -1,4 +1,8 @@
 .home-page {
+  height: 100%
+}
+
+.home-content {
   display: grid;
   grid-template-columns: 200px calc(100% - 200px);
   grid-template-rows: 100%;
@@ -11,4 +15,9 @@
   padding-right: 2px;
   height: calc(100% - 3px);
   width: border-box;
+}
+
+.chat-window {
+  height: 100%;
+  width: 100%
 }

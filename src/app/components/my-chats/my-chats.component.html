@@ -1,6 +1,6 @@
-<div style="height: 100%;">
+<div class="my-chats">
   <h2>Chats</h2>
-  <div *ngIf="myChats" style="display: flex; flex-direction: column; row-gap: 5px">
+  <div *ngIf="myChats" class="my-chats-list">
     <div *ngFor="let chat of myChats">
       <app-chat-summary [chat]="chat" [isSelected]="selectedChat==chat" (click)="selectChat(chat)"></app-chat-summary>
     </div>

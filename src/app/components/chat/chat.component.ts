@@ -8,12 +8,12 @@ import {Chat} from "../../../model/chat";
       <app-chat-header [chat]="chat" class="chat-header"></app-chat-header>
       <div class="chat-panel">
         <div class="groups">
-          <div *ngFor="let group of chat?.messages" style="padding: 5px; width: calc(100% - 10px)">
+          <div *ngFor="let group of chat?.messages" class="group">
             <app-temporal-group [group]="group" [showName]="true"></app-temporal-group>
           </div>
         </div>
         <app-typing [typingMembers]="chat.typingMembers" class="typing"></app-typing>
-        <app-chat-box [chatId]="chat.id" style="width: 100%;" class="input"></app-chat-box>
+        <app-chat-box [chatId]="chat.id" class="input"></app-chat-box>
       </div>
     </div>
 
@@ -54,12 +54,18 @@ import {Chat} from "../../../model/chat";
         flex-direction: column
       }
 
+      .group {
+        padding: 5px;
+        width: calc(100% - 10px)
+      }
+
       .typing {
         grid-area: typing;
       }
 
       .input {
         grid-area: input;
+        width: 100%
       }
     `
   ]
