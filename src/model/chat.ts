@@ -24,7 +24,8 @@ export class Chat {
     this.creator = creator;
     this.createdAt = createdAt;
     this.typingMembers = typingMembers
-    this.newMessageCallback = (id: string)=>{}
+    this.newMessageCallback = (id: string) => {
+    }
   }
 
 
@@ -50,7 +51,7 @@ export class Chat {
     return this.users.length > 2
   }
 
-  get hasUnreadMessage(){
+  get hasUnreadMessage() {
     return this.messages.hasUnreadMessage
   }
 }

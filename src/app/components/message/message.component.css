@@ -1,5 +1,9 @@
 .message {
   margin: 2px;
+
+  display: grid;
+  grid-template-rows: 15px max-content min-content;
+  grid-template-areas: "picker" "text" "reactions";
 }
 
 .my-message {
@@ -17,8 +21,8 @@
   height: min-content;
   padding: 8px;
   box-sizing: border-box;
-  width:max-content;
-  grid-area: message-text;
+  width: max-content;
+  grid-area: text;
 }
 
 .message-line {
@@ -32,13 +36,18 @@
 }
 
 .reaction-picker {
+  grid-area: picker;
   position: relative;
   float: left;
-  top: -15px;
 }
 
-.reactions {
+.message-reactions {
   position: relative;
   top: -10px;
-  float: right;
+  grid-area: reactions;
+  width: min-content;
+}
+
+.my-message .message-reactions {
+  justify-self: end;
 }

@@ -41,7 +41,7 @@ export class MessageComponent implements OnInit {
     }, 500)
   }
 
-  pressup(){
+  pressup() {
     clearTimeout(this.holdTimeout)
   }
 

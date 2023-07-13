@@ -10,11 +10,11 @@ import {TypingMembers} from "../../../model/typing-members";
   `,
   styles: [
     `
-        .typing-text {
-          font-weight: lighter;
-          color: gray;
-          font-size: small;
-        }
+      .typing-text {
+        font-weight: lighter;
+        color: gray;
+        font-size: small;
+      }
     `
   ]
 })

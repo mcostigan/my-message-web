@@ -23,7 +23,7 @@ export class ReactionPickerComponent implements OnInit {
     this.exit.emit()
   }
 
-  reactToMessage(emotion: Emotion){
+  reactToMessage(emotion: Emotion) {
     this.reactService.reactToMessage(this.messageId, emotion)
   }
 

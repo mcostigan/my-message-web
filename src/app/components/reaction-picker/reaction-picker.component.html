@@ -1,3 +1,7 @@
-<div class="emojis" (click)="close()">
-  <angular-emojis (click)="reactToMessage(emotion)" class="emoji" size="small" name="{{emotion.emojiId}}" *ngFor="let emotion of emotions"></angular-emojis>
+<div class="reaction-picker">
+<div class="emojis">
+  <angular-emojis (click)="reactToMessage(emotion)" class="emoji" size="small" name="{{emotion.emojiId}}"
+                  *ngFor="let emotion of emotions"></angular-emojis>
+</div>
+<div (click)="close()" style="color: red">x</div>
 </div>

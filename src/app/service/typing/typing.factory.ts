@@ -20,7 +20,7 @@ export class TypingFactory {
    */
   get(chatId: string): TypingMembers {
     const tm = new TypingMembers()
-    this.typingService.subscribeToTypeEvents(chatId).pipe(filter((event: TypingEvent)=> event.user.id !== this.authenticatedUser.get()?.id)).subscribe(
+    this.typingService.subscribeToTypeEvents(chatId).pipe(filter((event: TypingEvent) => event.user.id !== this.authenticatedUser.get()?.id)).subscribe(
       (typing: TypingEvent) => {
         tm.processEvent(typing)
       }

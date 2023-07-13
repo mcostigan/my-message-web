@@ -4,7 +4,7 @@
   padding: 3px;
 
   display: grid;
-  grid-template-rows: 25px 50px ;
+  grid-template-rows: 25px 50px;
   grid-template-areas: "name" "content";
   column-gap: 5px;
 }

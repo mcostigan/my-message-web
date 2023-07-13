@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {WebSocketService} from "../websocket.service";
-import {filter, map, Observable} from "rxjs";
+import {map, Observable} from "rxjs";
 import {IMessage} from "@stomp/stompjs";
 import {TypingEvent} from "../../../model/chat";
 

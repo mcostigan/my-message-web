@@ -7,7 +7,7 @@ export class MyChats implements Iterable<Chat> {
   constructor(chats: Chat[]) {
     this.chats = new MapDeque<Chat>()
 
-    chats.forEach((ch)=>{
+    chats.forEach((ch) => {
       this.chats.addToEnd(ch)
       ch.newMessageCallback = this.updateOrder.bind(this)
     })
@@ -18,7 +18,7 @@ export class MyChats implements Iterable<Chat> {
     chat.newMessageCallback = this.updateOrder.bind(this)
   }
 
-  updateOrder(chatId: string){
+  updateOrder(chatId: string) {
     this.chats.moveToFront(chatId)
   }
 

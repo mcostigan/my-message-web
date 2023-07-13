@@ -11,7 +11,8 @@ export class NewChatComponent implements OnInit {
   description: string | null = null
   user: string = ''
 
-  constructor(private chatService: ChatService) {}
+  constructor(private chatService: ChatService) {
+  }
 
   ngOnInit(): void {
   }

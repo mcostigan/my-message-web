@@ -57,7 +57,7 @@ class Heart extends Emotion {
   }
 }
 
-@Injectable({providedIn:'root'})
+@Injectable({providedIn: 'root'})
 export class EmotionFactory {
 
   get(name: string): Emotion {

@@ -10,14 +10,15 @@ export class AuthorGroupComponent implements OnInit {
   @Input() group!: AuthorGroup
   @Input() showName: boolean = true
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
   get classes(): string {
     const classes = ["author-group"]
-    if (this.group.isMe){
+    if (this.group.isMe) {
       classes.push("my-group")
     }
     return classes.join(" ")

@@ -1,9 +1,12 @@
 <div class="message" [className]="classes" (mousedown)="press()" (mouseup)="pressup()">
-  <app-reaction-picker [messageId]="message.id" *ngIf="showReactions" (exit)="this.showReactions=false" class="reaction-picker"></app-reaction-picker>
+  <app-reaction-picker [messageId]="message.id" *ngIf="showReactions" (exit)="this.showReactions=false"
+                       class="reaction-picker"></app-reaction-picker>
+
   <div class="message-text">
     <div class="message-line" *ngFor="let line of lines">
       {{line}}
     </div>
   </div>
-  <app-reactions class="reactions" [reactions]="message.reactions" *ngIf="message.reactions.length"></app-reactions>
+
+  <app-reactions class="message-reactions" [reactions]="message.reactions" *ngIf="message.reactions.length"></app-reactions>
 </div>

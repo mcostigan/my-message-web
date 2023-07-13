@@ -1,7 +1,6 @@
 import {User} from "./model";
-import {AuthenticatedUser} from "../app/service/authenticated-user.service";
-import Timeout = NodeJS.Timeout;
 import {IsTypingEvent, TypingEvent} from "./chat";
+import Timeout = NodeJS.Timeout;
 
 
 export class TypingMembers {

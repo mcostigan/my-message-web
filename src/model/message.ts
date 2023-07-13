@@ -53,7 +53,7 @@ export class Message {
     this.readState = state
   }
 
-  reactTo(reaction: Reaction){
+  reactTo(reaction: Reaction) {
     this.reactions.push(reaction)
   }
 

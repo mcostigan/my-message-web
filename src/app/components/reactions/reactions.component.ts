@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {EmotionFactory, Reaction} from "../../../model/reaction";
+import {Reaction} from "../../../model/reaction";
 
 @Component({
   selector: 'app-reactions',
@@ -8,6 +8,7 @@ import {EmotionFactory, Reaction} from "../../../model/reaction";
 })
 export class ReactionsComponent implements OnInit {
   @Input() reactions!: Reaction[]
+
   constructor() {
   }
 

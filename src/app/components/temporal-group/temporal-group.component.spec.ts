@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { TemporalGroupComponent } from './temporal-group.component';
+import {TemporalGroupComponent} from './temporal-group.component';
 
 describe('TemporalGroupsComponent', () => {
   let component: TemporalGroupComponent;
@@ -8,9 +8,9 @@ describe('TemporalGroupsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TemporalGroupComponent ]
+      declarations: [TemporalGroupComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

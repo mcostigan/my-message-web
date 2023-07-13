@@ -17,6 +17,6 @@ export class ReactService {
   }
 
   subscribeToReaction(messageId: string): Observable<Reaction> {
-    return this.webSocketService.subscription(`/topic/message/${messageId}/react`).pipe(map((m: IMessage)=> JSON.parse(m.body) as IReaction), map((r: IReaction)=>new Reaction(r.userId, this.emotionFactory.get(r.emotion))))
+    return this.webSocketService.subscription(`/topic/message/${messageId}/react`).pipe(map((m: IMessage) => JSON.parse(m.body) as IReaction), map((r: IReaction) => new Reaction(r.userId, this.emotionFactory.get(r.emotion))))
   }
 }

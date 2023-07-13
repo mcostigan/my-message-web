@@ -30,9 +30,9 @@ export class ChatService {
     return this.httpWrapper.post<NewChat>('chat', chat, true)
   }
 
-  subscribeToNewChats(): Observable<Chat>{
-    return this.webSocketService.subscription("/user/topic/newChat").pipe(map((m:IMessage)=>JSON.parse(m.body) as IChat)).pipe(
-      map((c: IChat)=>this.chatFactory.get(c))
+  subscribeToNewChats(): Observable<Chat> {
+    return this.webSocketService.subscription("/user/topic/newChat").pipe(map((m: IMessage) => JSON.parse(m.body) as IChat)).pipe(
+      map((c: IChat) => this.chatFactory.get(c))
     )
   }
 

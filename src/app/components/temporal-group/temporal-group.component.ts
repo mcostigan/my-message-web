@@ -11,7 +11,8 @@ export class TemporalGroupComponent implements OnInit {
   @Input() group!: TemporalGroup
   @Input() showName: boolean = false
 
-  constructor(private dateService: DateService) { }
+  constructor(private dateService: DateService) {
+  }
 
   ngOnInit(): void {
   }
@@ -23,7 +24,6 @@ export class TemporalGroupComponent implements OnInit {
   getRootTime(): string {
     return this.dateService.getTime(this.group.rootDate)
   }
-
 
 
 }

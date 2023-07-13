@@ -3,7 +3,6 @@ import {map, Observable} from "rxjs";
 import {IMessage} from "@stomp/stompjs";
 import {WebSocketService} from "../websocket.service";
 import {SimpleMessage} from "../../../model/message";
-import {MessageFactoryService} from "./message-factory.service";
 
 @Injectable({
   providedIn: 'root'

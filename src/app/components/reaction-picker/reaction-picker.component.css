@@ -1,5 +1,5 @@
 .emojis {
-  background: white;
+  background: rgba(255,255,255,.75);
   border-radius: 30px;
   width: max-content;
   padding: 3px;
@@ -8,4 +8,9 @@
   flex-direction: row;
   column-gap: 3px;
   float: right;
+}
+
+.reaction-picker{
+  display: flex;
+  flex-direction: row;
 }
