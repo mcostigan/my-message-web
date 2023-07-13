@@ -1,0 +1,9 @@
+.reactions {
+  border-radius: 30px;
+  background: gray;
+  border: 1px solid black;
+  box-sizing: border-box;
+  height: 35px;
+  width: max-content;
+  padding: 2px
+}

@@ -1,0 +1,4 @@
+<div class="reactions">
+  <angular-emojis size="x-small" [name]="reaction.emotion.emojiId" *ngFor="let reaction of reactions"></angular-emojis>
+  <span *ngIf="reactions.length>1">{{reactions.length}}</span>
+</div>

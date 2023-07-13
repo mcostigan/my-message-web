@@ -1,5 +1,6 @@
 import {User} from "./model";
 import {MessageService} from "../app/service/message/message.service";
+import {IReaction, Reaction} from "./reaction";
 
 export interface SimpleMessage {
   id: string
@@ -7,6 +8,7 @@ export interface SimpleMessage {
   timeStamp: string
   authorId: string
   readBy: string[]
+  reactions: IReaction[]
 }
 
 export class Message {
@@ -15,10 +17,12 @@ export class Message {
   readonly user: User
   readonly timeStamp: Date
   readonly isMyMessage: boolean
+  readonly reactions: Reaction[]
+
   private state: MessageState
   private readState: ReadState
 
-  constructor(id: string, text: string, user: User, timeStamp: string, isSent: boolean, isRead: boolean, isMyMessage: boolean, messageService: MessageService) {
+  constructor(id: string, text: string, user: User, timeStamp: string, isSent: boolean, isRead: boolean, isMyMessage: boolean, messageService: MessageService, reactions: Reaction[]) {
     this.id = id;
     this.text = text;
     this.user = user;
@@ -26,6 +30,7 @@ export class Message {
     this.state = MessageState.getState(isSent, this)
     this.readState = ReadState.get(this, isRead, messageService)
     this.isMyMessage = isMyMessage
+    this.reactions = reactions
   }
 
   get isSent(): boolean {
@@ -140,4 +145,3 @@ class IsReadState extends ReadState {
   }
 
 }
-

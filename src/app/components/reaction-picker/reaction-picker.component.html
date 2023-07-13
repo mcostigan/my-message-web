@@ -1,0 +1,3 @@
+<div class="emojis" (click)="close()">
+  <angular-emojis (click)="reactToMessage(emotion)" class="emoji" size="small" name="{{emotion.emojiId}}" *ngFor="let emotion of emotions"></angular-emojis>
+</div>

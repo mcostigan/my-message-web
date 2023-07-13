@@ -1,0 +1,11 @@
+.emojis {
+  background: white;
+  border-radius: 30px;
+  width: max-content;
+  padding: 3px;
+
+  display: flex;
+  flex-direction: row;
+  column-gap: 3px;
+  float: right;
+}

@@ -17,6 +17,9 @@ import {NewChatComponent} from './components/new-chat/new-chat.component';
 import {ChatHeaderComponent} from './components/chat-header/chat-header.component';
 import {TemporalGroupComponent} from './components/temporal-group/temporal-group.component';
 import {AuthorGroupComponent} from "./components/author-group/author-group.component";
+import { ReactionsComponent } from './components/reactions/reactions.component';
+import { ReactionPickerComponent } from './components/reaction-picker/reaction-picker.component';
+import {AngularEmojisModule} from 'angular-emojis';
 
 
 const routes: Routes = [
@@ -40,13 +43,16 @@ const routes: Routes = [
     NewChatComponent,
     ChatHeaderComponent,
     TemporalGroupComponent,
-    AuthorGroupComponent
+    AuthorGroupComponent,
+    ReactionsComponent,
+    ReactionPickerComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(routes),
-    HttpClientModule
+    HttpClientModule,
+    AngularEmojisModule,
   ],
   exports: [
     RouterModule

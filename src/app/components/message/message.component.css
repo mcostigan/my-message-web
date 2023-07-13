@@ -23,11 +23,22 @@
 
 .message-line {
   height: 25px;
-  min-width: 30px;
   width: max-content;
 }
 
 .pending-message {
   color: lightgray;
   background-color: darkgray;
+}
+
+.reaction-picker {
+  position: relative;
+  float: left;
+  top: -15px;
+}
+
+.reactions {
+  position: relative;
+  top: -10px;
+  float: right;
 }
