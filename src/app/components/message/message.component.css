@@ -1,9 +1,8 @@
 .message {
-  margin: 2px;
-
   display: grid;
-  grid-template-rows: 15px max-content min-content;
+  grid-template-rows: 1px max-content min-content;
   grid-template-areas: "picker" "text" "reactions";
+  height: max-content;
 }
 
 .my-message {

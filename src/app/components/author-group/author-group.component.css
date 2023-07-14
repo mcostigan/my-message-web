@@ -1,18 +1,21 @@
 .author-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.author-group-body {
   display: grid;
-  grid-template-rows: 25px 25px min-content;
+  grid-template-rows: 50px min-content;
   grid-template-columns: 50px calc(100% - 50px);
-  grid-template-areas: "image from"
-                        "image messages"
+  grid-template-areas: "image messages"
                         ". messages";
   width: 100%;
   column-gap: 5px;
 }
 
-.my-group {
+.my-group-body {
   grid-template-columns: calc(100% - 50px) 50px;
-  grid-template-areas: "from image"
-                        "messages image"
+  grid-template-areas:  "messages image"
                         "messages .";
 }
 
@@ -31,15 +34,15 @@
   object-fit: contain
 }
 
-.message-from {
-  grid-area: from;
-  font-weight: bolder;
-  font-size: large;
-}
-
 .messages {
   grid-area: messages;
   display: flex;
   flex-direction: column
 
+}
+
+.message-from {
+  padding-left: 50px;
+  font-weight: bolder;
+  font-size: small;
 }

@@ -17,9 +17,9 @@ export class AuthorGroupComponent implements OnInit {
   }
 
   get classes(): string {
-    const classes = ["author-group"]
+    const classes = ["author-group-body"]
     if (this.group.isMe) {
-      classes.push("my-group")
+      classes.push("my-group-body")
     }
     return classes.join(" ")
   }
