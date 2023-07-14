@@ -1,12 +1,18 @@
-<div class="newChat"></div>
-<div>
-  <input [(ngModel)]="name">
+<div class="create-chat">
+<div class="user-input-form">
+  <h1>Create Chat</h1>
+  <div>
+    <input [(ngModel)]="name" placeholder="Name">
+  </div>
+  <div>
+    <input [(ngModel)]="description" placeholder="Description">
+  </div>
+  <div>
+    <input [(ngModel)]="user" placeholder="Users">
+  </div>
+  <div class="submit">
+    <button (click)="create()">Create</button>
+  </div>
 </div>
-<div>
-  <input [(ngModel)]="description">
 </div>
-<div>
-  <input [(ngModel)]="user">
-</div>
-<button (click)="create()">Create</button>
 

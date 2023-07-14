@@ -1,5 +1,12 @@
 <div class="my-chats">
-  <h2>Chats</h2>
+  <div class="my-chats-header">
+    <h2>Chats</h2>
+    <div class="new-chat-button">
+      <button routerLink="/new">New</button>
+    </div>
+
+  </div>
+
   <div *ngIf="myChats" class="my-chats-list">
     <div *ngFor="let chat of myChats">
       <app-chat-summary [chat]="chat" [isSelected]="selectedChat==chat" (click)="selectChat(chat)"></app-chat-summary>

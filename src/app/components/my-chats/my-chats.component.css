@@ -7,3 +7,21 @@
   flex-direction: column;
   row-gap: 5px
 }
+
+.my-chats-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+.new-chat-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.new-chat-button button {
+  height: 30px;
+  width: 80px;
+}

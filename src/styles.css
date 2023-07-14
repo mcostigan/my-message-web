@@ -44,7 +44,7 @@ body {
   height: 30px;
 }
 
-.user-input-form .submit button {
+button {
   border-radius: 30px;
   background-color: #1982FC;
   color: white;
