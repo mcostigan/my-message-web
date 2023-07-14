@@ -4,7 +4,7 @@ import {AuthService} from "../../service/auth.service";
 @Component({
   selector: 'app-register',
   template: `
-    <div class="auth-pane">
+    <div class="user-input-form">
       <h1>Register</h1>
       <div class="user-name">
         <input [(ngModel)]="username" placeholder="User">
@@ -21,34 +21,6 @@ import {AuthService} from "../../service/auth.service";
   `,
   styles: [
     `
-      .auth-pane {
-        width: max-content;
-      }
-
-      .auth-pane input {
-        background-color: transparent;
-        color: white;
-        border-radius: 30px;
-        border: 1px solid gray;
-        height: 30px;
-        margin: 5px;
-        padding-left: 25px;
-        padding-right: 5px;
-      }
-
-      .auth-pane .submit {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        height: 30px;
-      }
-
-      .auth-pane .submit button {
-        border-radius: 30px;
-        background-color: #1982FC;
-        color: white;
-        border: none;
-      }
     `
   ]
 })
