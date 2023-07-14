@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {TypingService} from "./typing.service";
-import {AuthenticatedUser} from "../authenticated-user.service";
+import {AuthenticatedUser} from "../authenticated-user";
 import {TypingMembers} from "../../../model/typing-members";
 import {TypingEvent} from "../../../model/chat";
 import {filter} from "rxjs";

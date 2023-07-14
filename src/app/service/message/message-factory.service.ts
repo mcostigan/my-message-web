@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Message, SimpleMessage} from "../../../model/message";
-import {AuthenticatedUser} from "../authenticated-user.service";
+import {AuthenticatedUser} from "../authenticated-user";
 import {User} from "../../../model/model";
 import {MessageService} from "./message.service";
 import {EmotionFactory, IReaction, Reaction} from "../../../model/reaction";
