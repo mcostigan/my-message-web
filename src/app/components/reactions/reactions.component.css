@@ -5,5 +5,6 @@
   box-sizing: border-box;
   height: 35px;
   width: max-content;
-  padding: 2px
+  min-width: 35px;
+  padding: 2px;
 }

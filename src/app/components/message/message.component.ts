@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Message} from "../../../model/message";
-import {TextJustificationService} from "../../service/text-justification.service";
+import {PrintNeatlyService} from "../../service/print-neatly.service";
 import Timeout = NodeJS.Timeout;
 
 @Component({
@@ -15,12 +15,12 @@ export class MessageComponent implements OnInit {
   showReactions: boolean = false
   holdTimeout: Timeout | undefined
 
-  constructor(private textJustificationService: TextJustificationService) {
+  constructor(private textJustificationService: PrintNeatlyService) {
   }
 
   ngOnInit(): void {
     this.message.read()
-    this.lines = this.textJustificationService.justifyText(this.message.text)
+    this.lines = this.textJustificationService.printNeatly(this.message.text)
   }
 
   get classes(): string {
