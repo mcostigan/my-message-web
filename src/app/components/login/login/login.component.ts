@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {LoginService} from "../../../service/login.service";
+import {AuthService} from "../../../service/auth.service";
 
 @Component({
   selector: 'app-login',
   template: `
-    <div class="login">
+    <div class="auth-pane">
       <h1>Login</h1>
       <div class="user-name">
         <input [(ngModel)]="username" placeholder="User">
@@ -21,11 +21,11 @@ import {LoginService} from "../../../service/login.service";
   `,
   styles: [
     `
-      .login {
+      .auth-pane {
         width: max-content;
       }
 
-      input {
+      .auth-pane input {
         background-color: transparent;
         color: white;
         border-radius: 30px;
@@ -36,27 +36,26 @@ import {LoginService} from "../../../service/login.service";
         padding-right: 5px;
       }
 
-      .submit {
+      .auth-pane .submit {
         display: flex;
         flex-direction: row;
         justify-content: center;
         height: 30px;
       }
 
-      .submit button {
+      .auth-pane .submit button {
         border-radius: 30px;
         background-color: #1982FC;
         color: white;
         border: none;
-      }
-    `
+      }`
   ]
 })
 export class LoginComponent implements OnInit {
   username: string = ''
   password: string = ''
 
-  constructor(private loginService: LoginService) {
+  constructor(private authService: AuthService) {
   }
 
   ngOnInit(): void {
@@ -64,7 +63,7 @@ export class LoginComponent implements OnInit {
 
 
   login() {
-    this.loginService.login(this.username, this.password, '')
+    this.authService.login(this.username, this.password, '')
   }
 
 }
