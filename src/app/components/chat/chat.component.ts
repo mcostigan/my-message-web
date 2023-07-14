@@ -9,7 +9,7 @@ import {Chat} from "../../../model/chat";
       <div class="chat-panel">
         <div class="groups">
           <div *ngFor="let group of chat?.messages" class="group">
-            <app-temporal-group [group]="group" [showName]="true"></app-temporal-group>
+            <app-temporal-group [group]="group" [showName]="chat.isGroupChat"></app-temporal-group>
           </div>
         </div>
         <app-typing [typingMembers]="chat.typingMembers" class="typing"></app-typing>
