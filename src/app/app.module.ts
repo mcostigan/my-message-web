@@ -25,12 +25,13 @@ import {ChatHeaderComponent} from './components/chat-header/chat-header.componen
 import {HeaderDirective} from './components/chat-header/header.directive';
 import {GroupChatHeaderComponent} from "./components/chat-header/group-chat-header.component";
 import { DoubleChatHeaderComponent } from './components/chat-header/double-chat-header.component';
+import {AuthGuard} from "./guard/auth.guard";
 
 
 const routes: Routes = [
     {path: 'login', component: AuthenticationComponent},
-    {path: '', component: HomeComponent},
-    {path: 'new', component: NewChatComponent},
+    {path: '', component: HomeComponent, canActivate: [AuthGuard]},
+    {path: 'new', component: NewChatComponent, canActivate: [AuthGuard]},
   ]
 ;
 
