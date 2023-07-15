@@ -27,7 +27,7 @@ import {Chat} from "../../../model/chat";
         padding: 10px;
 
         display: grid;
-        grid-template-rows: 50px calc(100% - 50px);
+        grid-template-rows: 75px calc(100% - 75px);
         grid-template-areas: "header" "panel";
       }
 

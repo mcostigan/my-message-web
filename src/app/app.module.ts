@@ -14,14 +14,17 @@ import {ChatSummaryComponent} from './components/chat-summary/chat-summary.compo
 import {MessageComponent} from './components/message/message.component';
 import {TypingComponent} from './components/typing/typing.component';
 import {NewChatComponent} from './page/new-chat/new-chat.component';
-import {ChatHeaderComponent} from './components/chat-header/chat-header.component';
 import {TemporalGroupComponent} from './components/temporal-group/temporal-group.component';
 import {AuthorGroupComponent} from "./components/author-group/author-group.component";
 import {ReactionsComponent} from './components/reactions/reactions.component';
 import {ReactionPickerComponent} from './components/reaction-picker/reaction-picker.component';
 import {AngularEmojisModule} from 'angular-emojis';
-import { AuthenticationComponent } from './page/authentication/authentication.component';
+import {AuthenticationComponent} from './page/authentication/authentication.component';
 import {RegisterComponent} from "./components/register/register.component";
+import {ChatHeaderComponent} from './components/chat-header/chat-header.component';
+import {HeaderDirective} from './components/chat-header/header.directive';
+import {GroupChatHeaderComponent} from "./components/chat-header/group-chat-header.component";
+import { DoubleChatHeaderComponent } from './components/chat-header/double-chat-header.component';
 
 
 const routes: Routes = [
@@ -43,13 +46,16 @@ const routes: Routes = [
     MessageComponent,
     TypingComponent,
     NewChatComponent,
-    ChatHeaderComponent,
     TemporalGroupComponent,
     AuthorGroupComponent,
     ReactionsComponent,
     ReactionPickerComponent,
     AuthenticationComponent,
-    RegisterComponent
+    RegisterComponent,
+    ChatHeaderComponent,
+    HeaderDirective,
+    GroupChatHeaderComponent,
+    DoubleChatHeaderComponent
   ],
   imports: [
     BrowserModule,
